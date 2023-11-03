@@ -8,6 +8,7 @@ public class ChunksManager : MonoBehaviour
     [SerializeField] private int chunkSize = 5;
     [SerializeField] private int viewDistance = 1;
     [SerializeField] private Transform player;
+    [SerializeField] private List<int> chunkPossibleRotations = new List<int> { 0, 90, 180 };
 
     private Vector2Int playerChunkPos;
     private Dictionary<Vector2Int, GameObject> activeChunks = new Dictionary<Vector2Int, GameObject>();
@@ -69,8 +70,12 @@ public class ChunksManager : MonoBehaviour
 
     private void CreateChunk(Vector2Int chunkPos)
     {
+        int randomIndex = Random.Range(0, chunkPossibleRotations.Count);
+
+        float spawnRotationY = chunkPossibleRotations[randomIndex];
         Vector3 spawnPos = new Vector3(chunkPos.x * chunkSize, 0, chunkPos.y * chunkSize);
-        GameObject chunk = Instantiate(chunkPrefab, spawnPos, Quaternion.identity);
+
+        GameObject chunk = Instantiate(chunkPrefab, spawnPos, Quaternion.Euler(0f, spawnRotationY, 0f));
         activeChunks.Add(chunkPos, chunk);
     }
 
