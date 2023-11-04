@@ -11,17 +11,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = 20f;
 
     [Space, Header("Camera settings")]
-    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Camera firstPersonCamera;
+    [SerializeField] private Camera thirdPersonCamera;
     [SerializeField] private float lookSpeed = 2f;
     [SerializeField] private float lookXLimit = 45f;
+    [SerializeField] private bool firstPersonMode = false;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
 
-    private void Start()
+    // Singleton instance
+    public static PlayerController Instance { get; private set; }
+
+    private void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("PlayerController instance already exists. Destroying duplicate.");
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
@@ -49,10 +62,26 @@ public class PlayerController : MonoBehaviour
         // Apply movement
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Handles camera rotation
-        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        if (firstPersonMode)
+        {
+            // Handles camera rotation
+            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            firstPersonCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+    }
+
+    /// <summary>
+    /// Alternates between two camera modes (first-person and third-person). It turns one camera on and the other off while resetting the object's rotation
+    /// </summary>
+    public void ToggleCameras()
+    {
+        firstPersonMode = !firstPersonMode;
+
+        firstPersonCamera.gameObject.SetActive(firstPersonMode);
+        thirdPersonCamera.gameObject.SetActive(!firstPersonMode);
+
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }

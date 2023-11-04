@@ -13,7 +13,7 @@ public class ObjectPositioner : MonoBehaviour
 
     private List<Vector3> occupiedPositions = new List<Vector3>();
 
-    void Start()
+    private void Start()
     {
         for (int i = 0; i < maxObjects; i++)
         {
@@ -33,7 +33,7 @@ public class ObjectPositioner : MonoBehaviour
         }
     }
 
-    Vector3 GetRandomPositionInZone()
+    private Vector3 GetRandomPositionInZone()
     {
         int maxAttempts = 75; // Prevent infinite loops in case of placement issues.
         int currentAttempt = 0;
