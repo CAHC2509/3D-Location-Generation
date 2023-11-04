@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: bb920e0a2205d604888c11426a423dd5, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -621,8 +621,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.2
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1045,7 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 5020232640628206283, guid: 8ff405320c9fb834695f3914304e2071, type: 3}
   chunkSize: 20
-  viewDistance: 4
+  viewDistance: 3
   player: {fileID: 1086290206}
   chunkPossibleRotations: 000000005a000000b4000000
 --- !u!114 &1760593815
