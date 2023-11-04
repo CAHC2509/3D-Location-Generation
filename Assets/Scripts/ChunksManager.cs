@@ -57,16 +57,13 @@ public class ChunksManager : MonoBehaviour
         foreach (var kvp in activeChunks)
         {
             Vector2Int chunkPos = kvp.Key;
+
             if (Mathf.Abs(chunkPos.x - playerChunkPos.x) > viewDistance || Mathf.Abs(chunkPos.y - playerChunkPos.y) > viewDistance)
-            {
                 chunksToRemove.Add(chunkPos);
-            }
         }
 
         foreach (Vector2Int chunkPos in chunksToRemove)
-        {
             DeactivateChunk(chunkPos);
-        }
     }
 
     private void CreateChunk(Vector2Int chunkPos)
@@ -83,8 +80,6 @@ public class ChunksManager : MonoBehaviour
     private void DeactivateChunk(Vector2Int chunkPos)
     {
         if (activeChunks.TryGetValue(chunkPos, out GameObject chunk))
-        {
             chunk.SetActive(false);
-        }
     }
 }

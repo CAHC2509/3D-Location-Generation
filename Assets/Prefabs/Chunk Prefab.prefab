@@ -210,7 +210,7 @@ MonoBehaviour:
   - {fileID: 4366180245817411870, guid: 198def464105abb42892a86df28bd8c6, type: 3}
   zoneSize: {x: 18, y: 18}
   minSeparation: 2.5
-  maxObjects: 10
+  maxObjects: 8
 --- !u!1 &5138704038477143854
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4980629749506682971, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Range
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5545585876836820886, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Name
@@ -525,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4980629749506682971, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Range
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5545585876836820886, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Name
@@ -603,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4980629749506682971, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Range
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5545585876836820886, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Name
@@ -681,7 +681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4980629749506682971, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Range
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5545585876836820886, guid: ecb4c13e0530ed64c91c06158a3c39e6, type: 3}
       propertyPath: m_Name
