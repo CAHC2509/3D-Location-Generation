@@ -8,7 +8,7 @@ public class WallFiller : MonoBehaviour
     [SerializeField] private float raycastDistance = 1f;
     [SerializeField] private LayerMask wallLayer; // Layer mask to filter which objects to hit with the raycast
 
-    private void Start()
+    private void OnEnable()
     {
         // Define the ray's direction
         Vector3 raycastDirection = Vector3.forward;
