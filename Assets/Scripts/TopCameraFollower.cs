@@ -5,10 +5,9 @@ public class TopCameraFollower : MonoBehaviour
 {
     [SerializeField] private Transform target;  // The target to follow on the X-axis
     [SerializeField] private float smoothSpeed = 5.0f;  // Smoothing speed of the follow
+    [SerializeField] private Vector3 offset = new Vector3(0f, 35f, 0f);
 
-    private Vector3 offset;
-
-    private void Start() => offset = transform.position - target.position; // Calculate the initial offset
+    private void Start() => target = PlayerController.Instance.transform;
 
     private void LateUpdate()
     {

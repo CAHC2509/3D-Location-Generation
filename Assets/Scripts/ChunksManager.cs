@@ -15,6 +15,7 @@ public class ChunksManager : MonoBehaviour
 
     private void Start()
     {
+        player = PlayerController.Instance.transform;
         playerChunkPos = new Vector2Int(0, 0);
         GenerateChunksAroundPlayer(playerChunkPos);
     }
