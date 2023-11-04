@@ -5,10 +5,10 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement and jump settings")]
     [SerializeField] private CharacterController characterController;
-    [SerializeField] private float walkSpeed = 6f;
-    [SerializeField] private float runSpeed = 12f;
-    [SerializeField] private float jumpPower = 7f;
-    [SerializeField] private float gravity = 10f;
+    [SerializeField] private float walkSpeed = 10f;
+    [SerializeField] private float runSpeed = 17.5f;
+    [SerializeField] private float jumpPower = 10f;
+    [SerializeField] private float gravity = 20f;
 
     [Space, Header("Camera settings")]
     [SerializeField] private Camera playerCamera;
@@ -18,13 +18,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
 
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    void Update()
+    private void Update()
     {
         // Handles player movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);

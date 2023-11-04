@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class WallFiller : MonoBehaviour
 {
-    [SerializeField] private GameObject backWall;
+    [Header("Wall filler settings")]
+    [SerializeField] private GameObject backWall; // Aditional wall placed behind of the current wall
     [SerializeField] private Vector3 raycastOrigin;
     [SerializeField] private float raycastDistance = 1f;
     [SerializeField] private LayerMask wallLayer; // Layer mask to filter which objects to hit with the raycast

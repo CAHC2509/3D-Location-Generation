@@ -44,6 +44,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5020232640628206280}
+  - component: {fileID: 1394141393}
   m_Layer: 0
   m_Name: Chunk Prefab
   m_TagString: Untagged
@@ -71,6 +72,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1394141393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5020232640628206283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a2d89d3ff8105a42ba77e482ffb6464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 8371171877251870700, guid: 33fbf303fa03e474198de002dcda892d, type: 3}
+  - {fileID: 2899439017239458819, guid: bb6acec29a270424c96a7f3aa0452b3a, type: 3}
+  - {fileID: 3256954215153128690, guid: a9febbd0f2b930a49bb15d2286df3af3, type: 3}
+  - {fileID: 4359331209839233972, guid: dd8f91490b8ca00408beded030de1f26, type: 3}
+  - {fileID: 1667614262645780736, guid: 7900fcd8a3fd99744b72a76a7bc904f0, type: 3}
+  zoneSize: {x: 19, y: 19}
+  minSeparation: 2.5
+  maxObjects: 8
 --- !u!1 &5146669578966294218
 GameObject:
   m_ObjectHideFlags: 0
