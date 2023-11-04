@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Space, Header("Other settings")]
     [SerializeField] private KeyCode resetSceneKey = KeyCode.R;
+    [SerializeField] private KeyCode quitGameKey = KeyCode.Escape;
 
     private void Awake() => Application.targetFrameRate = 60;
 
@@ -27,6 +28,10 @@ public class GameManager : MonoBehaviour
         // If the key is pressed, restart the scene
         if (Input.GetKeyDown(resetSceneKey))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+
+        // If the key is pressed, close the game
+        if (Input.GetKeyDown(quitGameKey))
+            Application.Quit();
     }
 
     public void ToggleCameras() => PlayerController.Instance.ToggleCameras();
